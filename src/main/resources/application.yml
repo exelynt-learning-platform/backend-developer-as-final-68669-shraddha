@@ -1,0 +1,42 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: resource-booking-system
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/booking_system}
+    username: ${DB_USERNAME:booking_user}
+    password: ${DB_PASSWORD:booking_pass}
+    driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:update}
+    show-sql: ${JPA_SHOW_SQL:false}
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+  jackson:
+    time-zone: UTC
+    default-property-inclusion: non_null
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:change-this-development-only-secret-key-must-be-at-least-256-bits-long}
+    expiration-ms: ${JWT_EXPIRATION_MS:3600000}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.spironet.booking: ${LOG_LEVEL:INFO}
