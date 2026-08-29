@@ -1,0 +1,6 @@
+com/spironet/booking/security/JwtServiceTest.class
+com/spironet/booking/AbstractIntegrationTest.class
+com/spironet/booking/controller/ReservationControllerTest.class
+com/spironet/booking/AbstractIntegrationTest$LoginPayload.class
+com/spironet/booking/controller/AuthControllerTest.class
+com/spironet/booking/controller/ResourceControllerTest.class
